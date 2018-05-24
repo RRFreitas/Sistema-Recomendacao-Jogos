@@ -106,3 +106,6 @@ venv.bak/
 /.idea
 ./sisrec-api/.idea/
 ./sisrec/.idea/
+
+*.xml
+*.iml
