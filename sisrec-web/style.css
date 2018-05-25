@@ -1,0 +1,32 @@
+header {
+	text-align: center;
+}
+
+nav {
+	float: left;
+	background-color: antiquewhite
+}
+
+ul {
+	list-style-type: none;
+}
+
+.categoria-list li:hover {
+	cursor: pointer;
+	color: aqua;
+}
+
+.games {
+	float: left;
+	background-color:aquamarine
+}
+
+.game-list li:hover {
+	cursor: pointer;
+	color: blue;
+}
+
+.similar {
+	float: left;
+	background-color: beige;
+}
