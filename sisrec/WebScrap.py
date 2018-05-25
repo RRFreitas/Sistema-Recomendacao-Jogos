@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from models.Jogo import Jogo
 from json import dump
 
-main = "http://www.clickjogos.com.br/"
+mainUrl = "http://www.clickjogos.com.br/"
 
 def getGamesUrl():
     page = requests.get("http://www.clickjogos.com.br/top/6meses/")
@@ -36,9 +36,11 @@ def getGames():
     games = []
 
     for url in urls:
-        game = jogoConteudo(main + url)
+        game = jogoConteudo(mainUrl + url)
         if(not game is None):
             games.append(game)
+
+    return games
 
 def salvarDados(games):
     jsonData = {}

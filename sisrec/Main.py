@@ -6,13 +6,17 @@ from models.Similaridade import Similaridade
 import VectorSpaceModel
 
 def lerJogos():
-    arq = open("database/games.json", encoding="utf-8")
-    jogosJson = load(arq)
+    try:
+        arq = open("database/games.json", encoding="utf-8")
+        jogosJson = load(arq)
 
-    jogos = []
+        jogos = []
 
-    for j in jogosJson:
-        jogos.append(Jogo(j, np.array(jogosJson[j]['categorias']).reshape(1, -1), jogosJson[j]['url']))
+        for j in jogosJson:
+            jogos.append(Jogo(j, np.array(jogosJson[j]['categorias']).reshape(1, -1), jogosJson[j]['url']))
+    except FileNotFoundError:
+        print("Nenhuma base de dados encontrada... Execute o arquivo WebScrap.py para obter uma.")
+        exit(0)
 
     return jogos
 
