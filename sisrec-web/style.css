@@ -1,10 +1,21 @@
 header {
 	text-align: center;
+	background-color: coral;
+}
+
+header h1 {
+	margin-bottom: 0px;
 }
 
 nav {
 	float: left;
-	background-color: antiquewhite
+	background-color: antiquewhite;
+	padding: 15px;
+	width: 20%;
+}
+
+nav h3 {
+	text-align: center;
 }
 
 ul {
@@ -17,8 +28,15 @@ ul {
 }
 
 .games {
+	display: none;
 	float: left;
-	background-color:aquamarine
+	background-color:aquamarine;
+	padding: 15px;
+	width: 30%;
+}
+
+.games h3 {
+	text-align: center;
 }
 
 .game-list li:hover {
@@ -26,7 +44,20 @@ ul {
 	color: blue;
 }
 
+.game {
+	background-color: darkgray;
+	text-align: center;
+	display: none;
+}
+
 .similar {
 	float: left;
 	background-color: beige;
+	display: none;
+	padding: 15px;
+	width: 50%;
+}
+
+.similar h3 {
+	text-align: center;
 }

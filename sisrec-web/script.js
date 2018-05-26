@@ -21,6 +21,10 @@ $(document).ready(function() {
 		$.get(urlBase + "categorias/" + $(this).text(), (data)=> {
 			games = data;
 			updateGameList();
+			$('.game').hide(500);
+			$('.similar').hide(500);
+			$('.games').hide(500);
+			$('.games').show(500);
 		})
 	});
 	
@@ -32,6 +36,10 @@ $(document).ready(function() {
 			similarGames = data;
 			similarGames.length=5;
 			updateGameList();
+			$('.game').hide(500);
+			$('.game').show(500);
+			$('.similar').hide(500);
+			$('.similar').show(500);
 		})
 	});
 });
@@ -45,9 +53,12 @@ function updateGameList() {
 		);
 	}
 	
+	$('.game').html("");
+	
+	$('.game').append("<b>" + selectedGame + "</b>");
+	
 	$('.similar-list').html("");
 	
-	$('.similar-list').append("<b>" + selectedGame + "</b>");
 	for(game of similarGames) {
 		$('.similar-list').append(
 			"<li>" + game[0] + " | <b>" + Number((game[1] * 100).toFixed(1)) + "%<b/></li>"
